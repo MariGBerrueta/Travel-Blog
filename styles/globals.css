@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Octagon component */
+
+.octagonMargin {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  background-color: #FBBF24;
+  height: 250px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: initial;
+  position: relative;
+}
+
+.octagonImage {
+  position: relative;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  width: 230px;
+  height: 230px;
+}
+
+.animation {
+  animation: 8s fadeIn 1.2;
+}
+
+@keyframes fadeIn {
+0% {
+  opacity: 0;
+}
+25% {
+  opacity: 1;
+}
+75% {
+  opacity: 1;
+}
+100% {
+  opacity: 0;
+}
+}
+
+@media (min-width: 768px) {
+  .octagonMargin {
+    height: 350px;
+    width:  350px;
+  }
+
+  .octagonImage {
+    height: 330px;
+    width: 330px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .octagonMargin {
+    height: 450px;
+    width:  450px;
+  }
+
+  .octagonImage {
+    height: 430px;
+    width: 430px;
+  }
+}
+
+/*gallery component*/
+
+.photoGallery {
+  position: relative;
+  width: 100%
+}
+
+.photoGallery:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
