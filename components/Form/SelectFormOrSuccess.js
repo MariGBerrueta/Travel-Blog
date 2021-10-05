@@ -14,7 +14,6 @@ const SelectFormOrSuccess = () => {
 
     return (      
         <div>
-            {console.log(isSubmitted)}
            {!isSubmitted ? <Form formSubmit={formSubmit} /> : <Success />}
         </div>
     )

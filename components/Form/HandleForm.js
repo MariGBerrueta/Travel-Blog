@@ -29,17 +29,37 @@ function HandleForm(callback) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         setErrors({
             name: validateName(inputs),
             email: validateEmail(inputs),
             message: validateMessage(inputs)
-        })
+        });
+
         setIsSubmiting(true)
+
     }
+
 
     useEffect(() => {
         if (isSubmiting && errors.name == null && errors.email == null && errors.message == null) {
-            callback()
+            callback();
+
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                  'Accept': 'application/json, text/plain, */*',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(inputs)
+              })
+              .then((res) => {
+                    console.log('Response received')
+                    if (res.status === 200) {
+                    console.log('Response succeeded!')
+                    }
+            })
+            
         }
     }, [errors])
     
