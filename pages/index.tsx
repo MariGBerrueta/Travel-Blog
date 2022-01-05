@@ -7,19 +7,10 @@ import Gallery from "../components/Gallery";
 import Backdrop from "../components/Backdrop";
 import { useState } from "react";
 
-export default function Home() {
+const Home: React.FC = () => {
   const octagonImages = landingPageData.octagon;
   const galleryImages = landingPageData.gallery;
-  const [photoInfo, setPhotoInfo] = useState([
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-  ]);
+  const [photoInfo, setPhotoInfo] = useState<any[]> ([]);
 
   return (
     <div>
@@ -82,7 +73,7 @@ export default function Home() {
   );
 }
 
-function Plane(props) {
+function Plane (props: {[index: number]: string}) {
   return (
     <svg
       {...props}
@@ -102,3 +93,5 @@ function Plane(props) {
     </svg>
   );
 }
+
+export default Home

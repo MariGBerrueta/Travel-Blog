@@ -33,7 +33,6 @@ const Gallery = ({ photos, setPhotoInfo }) => {
                   item.country,
                   item.city,
                   item.location,
-                  item.location,
                   item.description,
                 ]);
               }}
