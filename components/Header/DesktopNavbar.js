@@ -25,4 +25,4 @@ const DesktopNavbar = () => {
     )
 }
 
-export default DesktopNavbar 
+export default DesktopNavbar

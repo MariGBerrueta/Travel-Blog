@@ -13,12 +13,12 @@ export default function SearchCountries () {
 
             <Header />
 
-            <section className='bg-yellow-400 min-h-screen pt-16 flex justify-center items-center'>                                 
+            <section className='bg-yellow-400 min-h-screen pt-16 flex justify-center items-center'>
                 <div className='h-1/2 w-screen bg-yellow-200 bg-opacity-50'>
                     <ul className='text-gray-900 font-bold text-xl py-8 text-center grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4'>
                         {Object.keys(countries).map( (country, i) => {
                             const path = `/Countries/${country}`
-                            return <Link key={i} href={path}><li className='p-2 cursor-pointer hover:bg-gray-900 hover:text-white'>{country}</li></Link>
+                            return <Link key={i} passHref={path}><li className='p-2 cursor-pointer hover:bg-gray-900 hover:text-white'>{country}</li></Link>
                         })}
                     </ul>
                 </div>

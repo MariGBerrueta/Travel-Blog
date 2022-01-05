@@ -23,7 +23,7 @@ const Gallery = ({photos, setPhotoInfo}) => {
                     return <div className={photoSpan(item)} key={i} onClick={() => {
                         setPhotoInfo([item.index, item.photo, item.size, item.country, item.city, item.location, item.location, item.description]);
                     }} >
-                            <Image 
+                            <Image
                                 src={item.photo}
                                 index={item.index}
                                 alt={item.alt}

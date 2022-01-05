@@ -13,19 +13,20 @@ const Octagon = ({images}) => {
             setTimeout( () => {
                 if (index < (images.length - 1)) {
                     setIndex(index + 1);
-                    setImage(images[index].source); 
+                    setImage(images[index].source);
                 }  else {
                     setIndex(0);
-                    setImage(images[index].source); 
+                    setImage(images[index].source);
                 }
             }, 8000)
-    }, [index]);
+    }, [index, images]);
 
     return (
         <div className='octagonMargin'>
             <div className='octagonImage bg-yellow-200'>
-                <Image 
+                <Image
                     src={image}
+                    alt="landscape image"
                     key={index}
                     layout="fill"
                     objectFit="cover"

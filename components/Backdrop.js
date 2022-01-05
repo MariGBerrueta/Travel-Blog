@@ -41,7 +41,7 @@ const Backdrop = ( {photoInfo, setPhotoInfo} ) => {
         if (photoInfo[0] != null && photoInfo[1] != null && photoInfo[2] != null && photoInfo[6] != null) {
             return (
                 <div className='fixed z-50 transform -translate-x-2/4 -translate-y-2/4 top-2/4 left-2/4 bg-gray-900 bg-opacity-70 h-screen w-screen'>
-                    <div className='absolute w-6 top-3 right-4 z-50 sm:top-4 sm:right-8 sm:w-8' 
+                    <div className='absolute w-6 top-3 right-4 z-50 sm:top-4 sm:right-8 sm:w-8'
                         onClick={() => {
                             setPhotoInfo([null, null, null, null, null, null, null, null])
                         }}>
@@ -51,15 +51,15 @@ const Backdrop = ( {photoInfo, setPhotoInfo} ) => {
 
                         <div className={firstBoxStyle()}>
                             <div className='relative h-full w-full'>
-                                <Image 
+                                <Image
                                     src={photoInfo[1]}
                                     key={photoInfo[0]}
                                     alt={photoInfo[6]}
                                     layout="fill"
                                     objectFit="contain"
                                     placeholder='blur'
-                                /> 
-                            </div>  
+                                />
+                            </div>
                         </div>
 
                         <div className={secondBoxStyle()}>
@@ -93,7 +93,7 @@ const Close = (props) => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M6 18L18 6M6 6l12 12" 
+          d="M6 18L18 6M6 6l12 12"
           fill="#FBBF24"
           stroke="#F9FAFB"
           strokeWidth="2"

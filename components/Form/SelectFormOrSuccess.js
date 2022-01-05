@@ -1,8 +1,6 @@
-import Form from "./Form"
 import { useState } from "react"
 import Success from "./Success"
-import HandleForm from "./HandleForm"
-
+import Form from "./Form"
 
 const SelectFormOrSuccess = () => {
 
@@ -12,7 +10,7 @@ const SelectFormOrSuccess = () => {
         setIsSubmitted(true)
     }
 
-    return (      
+    return (
         <div>
            {!isSubmitted ? <Form formSubmit={formSubmit} /> : <Success />}
         </div>

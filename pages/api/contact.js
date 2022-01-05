@@ -1,5 +1,4 @@
-
-export default function (req, res) {
+const sendMail = (req, res) => {
     require('dotenv').config();
 
     let nodemailer = require('nodemailer');
@@ -34,4 +33,6 @@ export default function (req, res) {
       })
 
       res.status(200).end()
-  }
+}
+
+export default sendMail

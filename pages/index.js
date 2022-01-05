@@ -31,7 +31,7 @@ export default function Home() {
             <div className='px-2.5 text-center flex flex-col items-center md:py-7 md:pr-9 md:justify-center'>
                 <h2 className='font-bold text-2xl pb-3 text-gray-900'>Explore the World through Photography!</h2>
                 <p className='pb-2 text-gray-900'>At See the World, you will be able to explore the world through photos. You can click each photo in the gallery to discover more about the place you are seeing</p>
-                <p className='pb-2 text-gray-900'>If you are interested in knowing more about the creator of this page, please visit the <Link href='/About'><a className='font-bold hover:text-yellow-400 hover:underline'>About</a></Link> or the <Link href='/Contact'><a className='font-bold hover:text-yellow-400 hover:underline'>Contact</a></Link> page </p>        
+                <p className='pb-2 text-gray-900'>If you are interested in knowing more about the creator of this page, please visit the <Link href='/About'><a className='font-bold hover:text-yellow-400 hover:underline'>About</a></Link> or the <Link href='/Contact'><a className='font-bold hover:text-yellow-400 hover:underline'>Contact</a></Link> page </p>
                 <p className='pb-2 text-gray-900 italic'>See a preview below or</p>
                 <div className='flex py-3'>
                     <Plane />
@@ -41,14 +41,14 @@ export default function Home() {
                 </div>
             </div>
           </section>
-          
+
           <section>
             <Gallery photos={galleryImages} setPhotoInfo={setPhotoInfo} />
             <Backdrop photoInfo={photoInfo} setPhotoInfo={setPhotoInfo} />
           </section>
       </main>
     </div>
-  ) 
+  )
 }
 
 function Plane(props) {

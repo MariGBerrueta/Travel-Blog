@@ -14,7 +14,7 @@ function HandleForm(callback) {
     const [errors, setErrors] = useState({
         name: null,
         email: null,
-        message: null, 
+        message: null,
     })
 
     const [isSubmiting, setIsSubmiting] = useState(false)
@@ -23,7 +23,7 @@ function HandleForm(callback) {
         const {name, value} = e.target;
         setInputs({
             ...inputs,
-            [name]: value          
+            [name]: value
             })
     }
 
@@ -59,12 +59,12 @@ function HandleForm(callback) {
                     console.log('Response succeeded!')
                     }
             })
-            
+
         }
-    }, [errors])
-    
+    }, [errors, callback, isSubmiting, inputs])
+
     return { handleChange, handleSubmit, inputs, errors}
-  
+
 }
 
 export default HandleForm

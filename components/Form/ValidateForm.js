@@ -15,7 +15,6 @@ const validateForm = () => {
             return 'E-mail address is invalid'
         }
     }
-    
 
     const validateMessage = (inputs) => {
         if (!inputs.message) {
@@ -29,4 +28,3 @@ const validateForm = () => {
 }
 
 export default validateForm
-

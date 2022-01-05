@@ -10,7 +10,7 @@ const MobileNavbar = () => {
           <div>
             <Menu.Button className=" flex items-center bg-yellow-400 w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </Menu.Button>
           </div>
@@ -131,7 +131,7 @@ function AboutInactive(props) {
       </svg>
     )
   }
-  
+
 function AboutActive(props) {
     return (
       <svg

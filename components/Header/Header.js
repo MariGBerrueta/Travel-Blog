@@ -3,9 +3,8 @@ import DesktopNavbar from "./DesktopNavbar";
 import MobileNavbar from './MobileNavbar'
 import Link from 'next/link';
 
-const mediaQuery = (width) => {
-    
-    const [targetReached, setTargetReached] = useState(false);
+const Header = () => {
+        const [targetReached, setTargetReached] = useState(false);
 
     const updateTarget = useCallback((e) => {
         if (e.matches) {
@@ -16,7 +15,7 @@ const mediaQuery = (width) => {
         }, []);
 
     useEffect(() => {
-        const media = window.matchMedia(`(max-width: ${width}px)`);
+        const media = window.matchMedia(`(max-width: 785px)`);
         media.addEventListener('change', e => updateTarget(e));
 
         if (media.matches) {
@@ -24,13 +23,9 @@ const mediaQuery = (width) => {
     }
 
     return () => media.removeEventListener('change', e => updateTarget(e));
-    }, []);
+    }, [updateTarget]);
 
-    return targetReached;
-}
-
-const Header = () => {
-    let isBreakingPoint = mediaQuery(785);
+    let isBreakingPoint = targetReached;
 
         return (
             <div className='bg-gray-900 h-16 flex flex-row z-10 fixed w-screen'>
