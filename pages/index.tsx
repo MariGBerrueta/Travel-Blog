@@ -10,7 +10,16 @@ import { useState } from "react";
 const Home: React.FC = () => {
   const octagonImages = landingPageData.octagon;
   const galleryImages = landingPageData.gallery;
-  const [photoInfo, setPhotoInfo] = useState<any[]> ([]);
+  const [photoInfo, setPhotoInfo] = useState<{
+    key: number;
+    photo: StaticImageData;
+    size: string;
+    country: string;
+    city: string;
+    location: string;
+    alt: string;
+    description: string;
+    }>();
 
   return (
     <div>
@@ -73,7 +82,7 @@ const Home: React.FC = () => {
   );
 }
 
-function Plane (props: {[index: number]: string}) {
+function Plane(props: { [index: number]: string }) {
   return (
     <svg
       {...props}

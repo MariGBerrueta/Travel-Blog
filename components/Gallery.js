@@ -26,15 +26,15 @@ const Gallery = ({ photos, setPhotoInfo }) => {
               className={photoSpan(item)}
               key={i}
               onClick={() => {
-                setPhotoInfo([
-                  item.index,
-                  item.photo,
-                  item.size,
-                  item.country,
-                  item.city,
-                  item.location,
-                  item.description,
-                ]);
+                setPhotoInfo({
+                  key: item.index,
+                  photo: item.photo,
+                  size: item.size,
+                  country: item.country,
+                  city: item.city,
+                  location: item.location,
+                  description: item.description,
+                });
               }}
             >
               <Image
