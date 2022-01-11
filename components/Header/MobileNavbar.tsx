@@ -4,7 +4,7 @@ import { Fragment } from "react";
 
 const MobileNavbar = () => {
   return (
-    <nav className="flex flex-grow justify-end items-center pr-3">
+    <nav className="flex flex-grow justify-end items-center pr-3 md:hidden">
       <Menu as="div" className="mr-5">
         <div>
           <Menu.Button className=" flex items-center bg-yellow-400 w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
@@ -36,22 +36,19 @@ const MobileNavbar = () => {
         >
           <Menu.Items className="z-50 absolute right-0 w-32 mr-5 mt-1 mt-0 origin-center border-yellow-400 border-2 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div>
-              <Link passHref="/About">
+              <Link passHref href="/About">
                 <Menu.Item>
                   {({ active }) => (
                     <button
-                      className={`${
-                        active ? "bg-yellow-400 text-white" : "text-gray-900"
-                      } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                      className={`${active ? "bg-yellow-400 text-white" : "text-gray-900"
+                        } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                     >
                       {active ? (
                         <AboutActive
-                          className="w-5 h-5 mr-2"
                           aria-hidden="true"
                         />
                       ) : (
                         <AboutInactive
-                          className="w-5 h-5 mr-2"
                           aria-hidden="true"
                         />
                       )}
@@ -61,22 +58,19 @@ const MobileNavbar = () => {
                 </Menu.Item>
               </Link>
 
-              <Link passHref="/SearchCountries">
+              <Link passHref href="/SearchCountries">
                 <Menu.Item>
                   {({ active }) => (
                     <button
-                      className={`${
-                        active ? "bg-yellow-400 text-white" : "text-gray-900"
-                      } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                      className={`${active ? "bg-yellow-400 text-white" : "text-gray-900"
+                        } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                     >
                       {active ? (
                         <CountriesActive
-                          className="w-5 h-5 mr-2"
                           aria-hidden="true"
                         />
                       ) : (
                         <CountriesInactive
-                          className="w-5 h-5 mr-2"
                           aria-hidden="true"
                         />
                       )}
@@ -86,22 +80,19 @@ const MobileNavbar = () => {
                 </Menu.Item>
               </Link>
 
-              <Link passHref="/Contact">
+              <Link passHref href="/Contact">
                 <Menu.Item>
                   {({ active }) => (
                     <button
-                      className={`${
-                        active ? "bg-yellow-400 text-white" : "text-gray-900"
-                      } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                      className={`${active ? "bg-yellow-400 text-white" : "text-gray-900"
+                        } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                     >
                       {active ? (
                         <ContactActive
-                          className="w-5 h-5 mr-2"
                           aria-hidden="true"
                         />
                       ) : (
                         <ContactInactive
-                          className="w-5 h-5 mr-2"
                           aria-hidden="true"
                         />
                       )}
@@ -118,22 +109,7 @@ const MobileNavbar = () => {
   );
 };
 
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  className="h-6 w-6"
-  fill="none"
-  viewBox="0 0 24 24"
-  stroke="currentColor"
->
-  <path
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    strokeWidth="2"
-    d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"
-  />
-</svg>;
-
-function AboutInactive(props) {
+function AboutInactive(props: { [index: number]: string }) {
   return (
     <svg
       {...props}
@@ -146,12 +122,13 @@ function AboutInactive(props) {
         fill="#FEF3C7"
         stroke="#FBBF24"
         strokeWidth="2"
+        className="w-5 h-5 mr-2"
       />
     </svg>
   );
 }
 
-function AboutActive(props) {
+function AboutActive(props: { [index: number]: string }) {
   return (
     <svg
       {...props}
@@ -164,12 +141,13 @@ function AboutActive(props) {
         fill="#FBBF24"
         stroke="#F9FAFB"
         strokeWidth="2"
+        className="w-5 h-5 mr-2"
       />
     </svg>
   );
 }
 
-function CountriesActive(props) {
+function CountriesActive(props: { [index: number]: string }) {
   return (
     <svg
       {...props}
@@ -182,12 +160,13 @@ function CountriesActive(props) {
         fill="#FBBF24"
         stroke="#F9FAFB"
         strokeWidth="2"
+        className="w-5 h-5 mr-2"
       />
     </svg>
   );
 }
 
-function CountriesInactive(props) {
+function CountriesInactive(props: { [index: number]: string }) {
   return (
     <svg
       {...props}
@@ -200,12 +179,13 @@ function CountriesInactive(props) {
         fill="#FEF3C7"
         stroke="#FBBF24"
         strokeWidth="2"
+        className="w-5 h-5 mr-2"
       />
     </svg>
   );
 }
 
-function ContactActive(props) {
+function ContactActive(props: { [index: number]: string }) {
   return (
     <svg
       {...props}
@@ -218,12 +198,13 @@ function ContactActive(props) {
         fill="#FBBF24"
         stroke="#F9FAFB"
         strokeWidth="2"
+        className="w-5 h-5 mr-2"
       />
     </svg>
   );
 }
 
-function ContactInactive(props) {
+function ContactInactive(props: { [index: number]: string }) {
   return (
     <svg
       {...props}
@@ -236,6 +217,7 @@ function ContactInactive(props) {
         fill="#FEF3C7"
         stroke="#FBBF24"
         strokeWidth="2"
+        className="w-5 h-5 mr-2"
       />
     </svg>
   );

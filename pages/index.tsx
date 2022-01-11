@@ -2,7 +2,6 @@ import Head from "next/head";
 import Octagon from "../components/Octagon";
 import landingPageData from "../public/data/landingPageData";
 import Link from "next/link";
-import Header from "../components/Header/Header";
 import Gallery from "../components/Gallery";
 import Backdrop from "../components/Backdrop";
 import { useState } from "react";
@@ -29,11 +28,9 @@ const Home: React.FC = () => {
       </Head>
 
       <main>
-        <Header />
-
         <section className="flex flex-col justify-center pt-24 pb-8 md:flex-row">
           <div className="flex justify-center items-center pb-7 md:px-9 md:pb-0">
-            <Octagon images={octagonImages} />
+            <Octagon photos={octagonImages} />
           </div>
 
           <div className="px-2.5 text-center flex flex-col items-center md:py-7 md:pr-9 md:justify-center">

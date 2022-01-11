@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const DesktopNavbar = () => {
   return (
-    <nav className="flex flex-grow items-center pl-56">
-      <ul className="flex flex-row text-gray-50 flex-grow justify-around">
+    <nav className="flex flex-grow items-center pl-56 hidden md:block">
+      <ul className="flex flex-row text-gray-50 flex-grow justify-around items-center h-full">
         <li className="hover:underline hover:text-yellow-400">
           <Link href="/About">
             <a>About</a>

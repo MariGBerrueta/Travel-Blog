@@ -1,7 +1,12 @@
+import React from "react";
 import HandleForm from "./HandleForm";
 
-const Form = ({ formSubmit }) => {
-  const { handleSubmit, handleChange, inputs, errors } = HandleForm(formSubmit);
+interface Props {
+  isFormValidated: () => void
+}
+
+const Form: React.FC<Props> = ({ isFormValidated }) => {
+  const { handleSubmit, handleChange, inputs, errors } = HandleForm(isFormValidated);
 
   return (
     <form onSubmit={handleSubmit} className="text-white flex flex-col">
@@ -37,7 +42,7 @@ const Form = ({ formSubmit }) => {
       </div>
 
       <div className="pb-4">
-        <textarea
+        <input
           type="text"
           value={inputs.message}
           onChange={handleChange}

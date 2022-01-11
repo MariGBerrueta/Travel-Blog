@@ -1,7 +1,22 @@
 import { useState, useEffect } from "react";
 import validateForm from "./ValidateForm";
 
-function HandleForm(callback) {
+interface LogicValues {
+  inputs: {
+    name: string;
+    email: string;
+    message: string;
+  }
+  errors: {
+    name: string;
+    email: string;
+    message: string;
+  }
+  handleSubmit: (e: React.SyntheticEvent<Element, Event>) => void
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+function HandleForm(isFormValidated: () => void): LogicValues {
   const { validateName, validateEmail, validateMessage } = validateForm();
 
   const [inputs, setInputs] = useState({
@@ -11,14 +26,14 @@ function HandleForm(callback) {
   });
 
   const [errors, setErrors] = useState({
-    name: null,
-    email: null,
-    message: null,
+    name: "",
+    email: "",
+    message: "",
   });
 
   const [isSubmiting, setIsSubmiting] = useState(false);
 
-  const handleChange = (e) => {
+  function handleChange (e: React.ChangeEvent<HTMLInputElement>): void {
     const { name, value } = e.target;
     setInputs({
       ...inputs,
@@ -26,7 +41,7 @@ function HandleForm(callback) {
     });
   };
 
-  const handleSubmit = (e) => {
+  function handleSubmit (e: React.SyntheticEvent): void {
     e.preventDefault();
 
     setErrors({
@@ -41,11 +56,11 @@ function HandleForm(callback) {
   useEffect(() => {
     if (
       isSubmiting &&
-      errors.name == null &&
-      errors.email == null &&
-      errors.message == null
+      errors.name == "" &&
+      errors.email == "" &&
+      errors.message == ""
     ) {
-      callback();
+      isFormValidated();
 
       fetch("/api/contact", {
         method: "POST",
@@ -61,7 +76,7 @@ function HandleForm(callback) {
         }
       });
     }
-  }, [errors, callback, isSubmiting, inputs]);
+  }, [errors, isFormValidated, isSubmiting, inputs]);
 
   return { handleChange, handleSubmit, inputs, errors };
 }

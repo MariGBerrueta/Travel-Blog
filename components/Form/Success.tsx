@@ -1,4 +1,5 @@
-const Success = () => {
+
+const Success: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center sm:flex-row-reverse md:w-3/4 lg:w-1/2">
       <h1 className="pl-3 text-gray-900 text-4xl font-bold text-center h-full">
@@ -9,7 +10,7 @@ const Success = () => {
   );
 };
 
-function Plane(props) {
+function Plane (props: { [index: number]: string })  {
   return (
     <svg
       {...props}
