@@ -1,4 +1,4 @@
-describe('country page renders right country and images', () => {
+describe ('country page renders right country and images', () => {
     //visits country/targetCountry page
     it('visits Country page', () => {
       cy.visit('/Country/Russia')
