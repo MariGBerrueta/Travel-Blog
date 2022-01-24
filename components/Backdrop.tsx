@@ -73,7 +73,7 @@ const Backdrop: React.FC<Props> = ({ photoInfo, setPhotoInfo }) => {
 
           <div className={createStyle(sLarge, sNormal)}>
             <div className={createStyle(tLarge, tNormal)}>
-              <h1>
+              <h1 cy-data='BDcountryName'>
                 <span className="font-semibold">Country:</span> {photoInfo.country}
               </h1>
               <h1>

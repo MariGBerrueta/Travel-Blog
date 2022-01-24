@@ -44,7 +44,7 @@ const Country: React.FC = () => {
 
     return (
         <div>
-            <h1 className='pt-20 text-8xl font-bold text-gray-900 text-center py-10 hover:text-yellow-400'>{currentCountry}</h1>
+            <h1 cy-data='pageTitle' className='pt-20 text-8xl font-bold text-gray-900 text-center py-10 hover:text-yellow-400'>{currentCountry}</h1>
             <Gallery photos={imagesByCountry} setPhotoInfo={setPhotoInfo} />
             <Backdrop photoInfo={photoInfo} setPhotoInfo={setPhotoInfo} />
         </div>

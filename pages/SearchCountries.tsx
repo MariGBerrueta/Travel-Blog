@@ -17,7 +17,7 @@ const SearchCountries: React.FC = () => {
             {allCountries.map((country) => {
               return (
                 <Link key={country.key} passHref href={`/Country/${country.name}`}>
-                  <li className="p-2 cursor-pointer hover:bg-gray-900 hover:text-white">
+                  <li data-cy={country.name} className="p-2 cursor-pointer hover:bg-gray-900 hover:text-white">
                     {country.name}
                   </li>
                 </Link>

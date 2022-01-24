@@ -48,6 +48,7 @@ const Gallery: React.FC<Props> = ({ photos, setPhotoInfo }) => {
         {currentPhotos.map((photo, i) => {
           return (
             <div
+              cy-data={`photo${photo.key}`}
               className={photoSpan(photo.size)}
               key={photo.key}
               onClick={() => {
