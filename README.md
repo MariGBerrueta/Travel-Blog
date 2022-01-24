@@ -1,17 +1,3 @@
-## Typescript
-
-Here, I describe the process for installing and using Typescript in my Next Js project.
-
-First, I dedicated time to understanding Typescript, its benefits, and how it works. To achieve this, I read the official Typescript Handbook and watched tutorials from YouTube. Then, I followed the Next JS documentation to add Typescript to my project. I used the default configuration, except for the target, which I changed to ES6. I did not see the necessity of making my code downlevel when modern browsers support ES6, which is the syntax I was already using for my project.
-
-With Typescript installed, I  changed my VSC settings to use Typescript to format my code. Also, I added a snippet, **tfc**, in the *typescript react.json* file. The snippet creates a *React function component* with Typescript syntax(an interface for Props, etc.). Finally, I formatted and fixed warnings shown to me by Typescript. Mainly, I got messages of missing *deps* in my useEffect functions, etc.
-
-After checking that my code was compiling properly, I converted my *index* and *backdrop* components to *tsx* files to explore its functionality and see it was working. Following the Typescript document's suggestions, I added a few *types* as Typescript intuitively assigns *types* on its own. I hover over my elements and assign *types* to values set to **any**. If necessary, I hover over my elements to get clues on why Typescript was complaining.
-
-After adding types, fixing warnings, and making sure the files were compiling,  I changed the strict mode in my configuration to *true*. The modification forced me to follow a more strict version of its rules. Nevertheless, I was more familiar with the language and implemented the necessary actions faster.
-
-In conclusion, I understand why so many companies use the Typescript language. Adding a static type system to your regular JS makes it easier to detect bugs before runtime. As a developer, it makes you feel safer. It also made me think differently about my code. For example, I erase my *null* values. On the other hand, I recognize that I am new to the language, and there is a lot of syntax and functionality that I need to explore.
-
 ## Getting Started
 
 First, install all packages:
