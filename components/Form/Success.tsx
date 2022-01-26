@@ -1,7 +1,7 @@
 
 const Success: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center sm:flex-row-reverse md:w-3/4 lg:w-1/2">
+    <div cy-data="successMessage" className="flex flex-col items-center justify-center sm:flex-row-reverse md:w-3/4 lg:w-1/2">
       <h1 className="pl-3 text-gray-900 text-4xl font-bold text-center h-full">
         Your message has been sent!
       </h1>

@@ -10,6 +10,7 @@ const Form: React.FC<Props> = ({ isFormValidated }) => {
 
   return (
     <form onSubmit={handleSubmit} className="text-white flex flex-col">
+      {console.log(JSON.stringify(inputs))}
       <h2 className="text-3xl font-bold text-gray-900 pb-6">
         Let&apos;s get in touch!
       </h2>
@@ -21,9 +22,10 @@ const Form: React.FC<Props> = ({ isFormValidated }) => {
           name="name"
           placeholder="Name"
           className="w-full bg-gray-900 rounded-full pl-4 py-2 sm:w-3/4 md:w-1/2"
+          cy-data="nameInput"
         />
         {errors.name && (
-          <p className="text-red-600 text-sm font-bold pl-2">{errors.name}</p>
+          <p cy-data="errorMessages" className="text-red-600 text-sm font-bold pl-2">{errors.name}</p>
         )}
       </div>
 
@@ -35,9 +37,10 @@ const Form: React.FC<Props> = ({ isFormValidated }) => {
           name="email"
           placeholder="E-mail"
           className="w-full bg-gray-900 rounded-full pl-4 py-2 sm:w-3/4 md:w-1/2"
+          cy-data="emailInput"
         />
         {errors.email && (
-          <p className="text-red-600 text-sm font-bold pl-2">{errors.email}</p>
+          <p cy-data="errorMessages" className="text-red-600 text-sm font-bold pl-2">{errors.email}</p>
         )}
       </div>
 
@@ -49,9 +52,10 @@ const Form: React.FC<Props> = ({ isFormValidated }) => {
           name="message"
           placeholder="Message"
           className="resize-none w-full h-36 bg-gray-900 pr-6 pl-3 pt-2 rounded-lg overflow-y-auto scrollbar scrollbar-thumb-white scrollbar-thumb-rounded-full md:w-3/4"
+          cy-data="messageInput"
         />
         {errors.message && (
-          <p className="text-red-600 text-sm font-bold pl-2">
+          <p cy-data="errorMessages" className="text-red-600 text-sm font-bold pl-2">
             {errors.message}
           </p>
         )}
@@ -61,6 +65,7 @@ const Form: React.FC<Props> = ({ isFormValidated }) => {
         type="submit"
         value="Send Message"
         className="w-3/5 h-10 bg-yellow-400 text-gray-900 text-center font-bold rounded-full p-2 cursor-pointer hover:bg-gray-900 hover:text-white sm:w-2/5 md:w-1/5"
+        cy-data="submitBtn"
       >
         Send Message
       </button>
